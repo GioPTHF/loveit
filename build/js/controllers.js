@@ -16,46 +16,13 @@
       $scope.itemselected = item;
     }
   }])
-  .controller('infoRoomDescriptionController', ['$scope','loveitService', function($scope, loveitHabitacion){
+  .controller('infoRoomDescriptionController', ['$scope', function($scope){
     $scope.active = true;
     $scope.item = 1;
     $scope.showItem = function(item){
       $scope.item = item;
-      alert($scope.item);
     }
-    $scope.listHabitaciones = [];
-      loveitHabitacion.getImagesHabitacion().then(function(data){
-        $scope.listHabitaciones = data;
-      });
   }])
-
-  .controller('getImagesLibraryController', ['$scope', 'loveitService', function($scope, loveitService){
-    $scope.listImages = [];
-    $scope.loadList = function(){
-      loveitService.getImagesLibrary().then(function(data){
-        $scope.listImages = data;
-      });
-    }
-    $scope.loadList();
-  }])
-  .controller('getNombreLibraryController', ['$scope', 'loveitService', function($scope, loveitService){
-    $scope.listNombre = [];
-    $scope.loadList = function(){
-      loveitService.getNombre().then(function(data){
-        $scope.listNombre = data;
-      });
-    }
-    $scope.loadList();
-  }])
-  .controller('getDescripcionLibraryController', ['$scope', 'loveitService', function($scope, loveitService){
-    $scope.listDescripcion = [];
-    $scope.loadList = function(){
-      loveitService.getDescripcion().then(function(data){
-        $scope.listDescripcion = data;
-      });
-    }
-    $scope.loadList();
-  }])  
 
   .controller('ExampleController', ['$scope', function($scope) {
     $scope.data = {};

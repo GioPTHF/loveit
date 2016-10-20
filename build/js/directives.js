@@ -68,25 +68,26 @@
       templateUrl: './partials/amenidades-content.html',
       controller: function($document){
         $('.top-left-top,.top-left-bottom,.top-right-box,.mid-left-bottom,.bottom-left,.bottom-right-bottom').click(function(){
-          $("html, body").animate({
-            'scrollTop' : '0'
-          }, 500, function(){});
-          $('.amenidades-wrapper').removeClass('fadeIn');
-          $('.amenidades-wrapper').addClass('fadeOut');
-          $('.amenidades-wrapper').css({'display' : 'none'});
-          $('#informationShow').removeClass('fadeOut');
-          $('#informationShow').css({'display' : 'flex'});
-          $('#informationShow').addClass('fadeIn');
 
-          setTimeout(function(){
-            var mySwiper2 = new Swiper('.swiper-container',{
-              pagination: '.swiper-pagination',
-              loop:true,
-              grabCursor: false,
-              paginationClickable: true,
-              autoplay:false
-            });
-          },80);
+          // $("html, body").animate({
+          //   'scrollTop' : '0'
+          // }, 500, function(){});
+          // $('.amenidades-wrapper').removeClass('fadeIn');
+          // $('.amenidades-wrapper').addClass('fadeOut');
+          // $('.amenidades-wrapper').css({'display' : 'none'});
+          // $('#informationShow').removeClass('fadeOut');
+          // $('#informationShow').css({'display' : 'flex'});
+          // $('#informationShow').addClass('fadeIn');
+          //
+          // setTimeout(function(){
+          //   var mySwiper2 = new Swiper('.swiper-container',{
+          //     pagination: '.swiper-pagination',
+          //     loop:true,
+          //     grabCursor: false,
+          //     paginationClickable: true,
+          //     autoplay:false
+          //   });
+          // },80);
 
         });
       }
@@ -125,25 +126,26 @@
       templateUrl: './partials/grid-photos.html',
       controller: function($document){
         $('.topImage,.bottomImage,.leftBox').click(function(){
-          $("html, body").animate({
-            'scrollTop' : '0'
-          }, 500, function(){});
-          $('#sectionSpaces').removeClass('fadeIn');
-          $('#sectionSpaces').addClass('fadeOut');
-          $('#sectionSpaces').css({'display' : 'none'});
-          $('#informationShow').removeClass('fadeOut');
-          $('#informationShow').css({'display' : 'flex'});
-          $('#informationShow').addClass('fadeIn');
 
-          setTimeout(function(){
-            var mySwiper2 = new Swiper('.swiper-container',{
-              pagination: '.swiper-pagination',
-              loop:true,
-              grabCursor: false,
-              paginationClickable: true,
-              autoplay:false
-            });
-          },80);
+          // $("html, body").animate({
+          //   'scrollTop' : '0'
+          // }, 500, function(){});
+          // $('#sectionSpaces').removeClass('fadeIn');
+          // $('#sectionSpaces').addClass('fadeOut');
+          // $('#sectionSpaces').css({'display' : 'none'});
+          // $('#informationShow').removeClass('fadeOut');
+          // $('#informationShow').css({'display' : 'flex'});
+          // $('#informationShow').addClass('fadeIn');
+          //
+          // setTimeout(function(){
+          //   var mySwiper2 = new Swiper('.swiper-container',{
+          //     pagination: '.swiper-pagination',
+          //     loop:true,
+          //     grabCursor: false,
+          //     paginationClickable: true,
+          //     autoplay:false
+          //   });
+          // },80);
 
         });
         $('.closeDescriptionAmenidades').click(function(){
@@ -167,25 +169,25 @@
       templateUrl: './partials/grid-photos-habitaciones.html',
       controller: function($document){
         $('.selectHover').click(function(){
-          $("html, body").animate({
-            'scrollTop' : '0'
-          }, 500, function(){});
-          $('#sectionHabitaciones').removeClass('fadeIn');
-          $('#sectionHabitaciones').addClass('fadeOut');
-          $('#sectionHabitaciones').css({'display' : 'none'});
-          $('#informationShow').removeClass('fadeOut');
-          $('#informationShow').css({'display' : 'flex'});
-          $('#informationShow').addClass('fadeIn');
-
-          setTimeout(function(){
-            var mySwiper2 = new Swiper('.swiper-container',{
-              pagination: '.swiper-pagination',
-              loop:true,
-              grabCursor: false,
-              paginationClickable: true,
-              autoplay:false
-            });
-          },80);
+          // $("html, body").animate({
+          //   'scrollTop' : '0'
+          // }, 500, function(){});
+          // $('#sectionHabitaciones').removeClass('fadeIn');
+          // $('#sectionHabitaciones').addClass('fadeOut');
+          // $('#sectionHabitaciones').css({'display' : 'none'});
+          // $('#informationShow').removeClass('fadeOut');
+          // $('#informationShow').css({'display' : 'flex'});
+          // $('#informationShow').addClass('fadeIn');
+          //
+          // setTimeout(function(){
+          //   var mySwiper2 = new Swiper('.swiper-container',{
+          //     pagination: '.swiper-pagination',
+          //     loop:true,
+          //     grabCursor: false,
+          //     paginationClickable: true,
+          //     autoplay:false
+          //   });
+          // },80);
 
         });
       }
