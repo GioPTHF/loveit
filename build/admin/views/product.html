@@ -7,13 +7,13 @@
 			<div class="panel panel-body" ng-controller="productDetailsController">
 				<ul class="nav nav-tabs">
 				  <li style="cursor: pointer;" role="presentation" ng-class="{ active:item === 1 }">
-						<a ng-click="selectItem(1)">Editar</a>
+						<a ng-click="selectItem(1)">{{productDetails.idNombre}}</a>
 					</li>
 				  <li style="cursor: pointer;" role="presentation" ng-class="{ active:item === 2 }">
-						<a ng-click="selectItem(2)">Galeria de {{productDetails.idNombre}}</a>
+						<a ng-click="selectItem(2)">Imagenes</a>
 					</li>							
 					<li style="cursor: pointer;" role="presentation">
-						<a href="#/habitaciones">Back</a>
+						<a href="#/habitaciones">Regresar</a>
 					</li>
 				</ul>
 				<div ng-show="item === 1" class="cont-nav">
