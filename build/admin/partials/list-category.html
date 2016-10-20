@@ -1,0 +1,40 @@
+<div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tipo de habitación</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key, data) in listCategory">
+        <th>{{data.idtipoHabitacion}}</th>
+        <th>{{data.idnombreHabitacion}}</th>
+        <th>
+		  		<span class="label label-danger deleteCategory" data-id='{{data.idtipoHabitacion}}' style="cursor:pointer">Delete</span>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <div class="col-md-12 alert alert-danger alertDeleteCat" role="alert" style="display: none;">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    Sorry, You can't delete this category because it's currently in used by a room
+  </div>
+  <div class="col-md-12"><br><br><br></div>
+  <div class="col-md-5">
+    <form class="form-horizontal" enctype="multipart/form-data" id="addCategory">
+      <div class="form-group">
+        <label for="categoryName" class="col-sm-12 control-label" style="text-align: left;">Inserte un nombre para el tipo de habitación *</label>
+        <div class="col-sm-12">
+          <input required type="text" class="form-control" id="categoryName" name="categoryName"></input>
+        </div>
+        <div class="col-sm-12">
+          <input type="submit" class="btn btn-default" value="Agregar"  name="" style="margin-top: 10px;"></input>
+          <input type="" class="btn btn-default clickUpdate" value=""  name="" style="display:none" ng-click="update()"></input>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

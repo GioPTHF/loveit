@@ -1,0 +1,25 @@
+<div class="row" ng-controller="viewNavController">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Habitaciones - Loveit</h3>
+			</div>
+			<div class="panel panel-body" ng-controller="productDataController">
+				<ul class="nav nav-tabs">
+				  <li style="cursor: pointer;" role="presentation" ng-class="{ active:item === 1 }">
+						<a ng-click="selectItem(1)">Lista habitaciones</a>
+					</li>
+					<li style="cursor: pointer;" role="presentation" ng-class="{ active:item === 2 }">
+						<a ng-click="selectItem(2)">Categoria de habitaciones</a>
+					</li>
+				</ul>
+				<div ng-show="item === 1" class="cont-nav">
+					<list-products></list-products>
+				</div>
+				<div ng-show="item === 2" class="cont-nav">
+					<list-category></list-category>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

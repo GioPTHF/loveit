@@ -1,0 +1,85 @@
+$img-size = 60px
+.servicios-wrapper
+  margin-left 6%
+  margin-top 5vw
+
+.title-wrapper
+  width 100%
+  text-align left
+  margin-left: 4%
+span.title-section
+  font-size 24px
+  font-weight 200
+  color black
+  letter-spacing: 4px
+
+.services-wrapper
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+.service-box
+  width: 30%;
+  flex: 0 1 30%;
+  height: auto;
+  margin 3vw 0
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+
+.service-logo
+  margin-right: 15px;
+  width: 80%
+
+.service-logo img
+  width: $img-size;
+  height: $img-size;
+
+.service-title
+  margin-bottom: $img-size - 10px;
+  margin-top: 10px;
+  font-size 18px
+
+.service-description
+  font-size: 16px;
+  text-align justify
+
+@media(max-width 1199px)
+  .servicios-wrapper
+    margin 0 auto
+  .title-wrapper
+    margin-left 6%
+
+  .service-box
+    flex: 0 1 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items center
+
+  .service-logo
+    margin-right: 0;
+    width auto
+
+  .service-title
+    margin 10px 0
+    text-align center
+
+  .title-wrapper
+    margin-left: 0;
+    text-align: center;
+    padding-top: 5vw;
+
+  .services-wrapper
+    width 95%
+    margin 0 auto
+
+@media(max-width 480px)
+  .service-box
+    flex: 0 1 90%;
+  .services-wrapper
+    padding 10vw 0

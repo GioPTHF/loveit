@@ -1,0 +1,20 @@
+<div id="contendLoadImages" ng-controller="getImagesLibraryController">
+  <span class="closePanel">close</span>
+  <span class="titleInsertImages">Images Library</span>
+  <ul>
+    <li ng-repeat="(key, data) in listImages">
+      <div>
+        <img src="./../src/images/document/{{data.nameImage}}">
+      </div>
+      <span class="glyphicon glyphicon glyphicon-copy btn" aria-hidden="true" ngclipboard data-clipboard-target="#foo{{$index}}"></span>
+      <span class="glyphicon glyphicon glyphicon-trash deleteImageLibrary btn" aria-hidden="true" data-id="{{data.idImage}}"></span>
+      <input id="foo{{$index}}" value="http://paratodohayfans.com/web/agalea/build/admin/src/images/document/{{data.nameImage}}" style="display:block; opacity:0;">
+    </li>
+  </ul>
+  <form class="libraryImages" id="libraryImages" enctype="multipart/form-data">
+    <label for="setImage">Insert Images</label>
+    <input required type="file" multiple class="form-control" id="setImage" name="setImage[]"></input>
+    <input type="submit" class="btn btn-default" value="Upload"  name="" style="margin-top: 10px;"></input>
+    <span style="display:block; opacity: 0;" ng-click="loadList()" class="ocultLoadInfoImages">Event</span>
+  </form>
+</div>

@@ -1,0 +1,72 @@
+.servicios-premium-wrapper
+  width: 80%;
+  margin: 0 auto;
+  padding: 5vw 0
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+.premium-item
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+.premium-img
+  width: 100%;
+  height: auto;
+  margin 3vw 0
+  text-align: center;
+
+.premium-img img
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 200px;
+
+p.premium-desc-info
+  font-size: 16px;
+  font-family "Geomanist-Regular"
+  text-align: justify;
+
+@media(max-width 1280px)
+  .premium-img img
+    width: 225px;
+    height: 225px;
+
+@media(max-width 1280px)
+  .premium-img img
+    width: 200px;
+    height: 200px;
+
+@media(max-width 768px)
+
+  .servicios-premium-wrapper
+    flex-direction: column;
+    align-items: center;
+
+  .premium-img img
+    width: 175px;
+    height: 175px;
+
+  .premium-item
+    width: 60%
+
+  .premium-img
+    margin 5vw 0
+
+@media(max-width 640px)
+  .premium-item
+    width: 70%
+
+@media(max-width 480px)
+  .premium-item
+    width: 80%
+
+@media(max-width 320px)
+  .premium-item
+    width: 90%

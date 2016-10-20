@@ -1,0 +1,45 @@
+<div ng-controller="productDataController">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th># IMG</th>
+        <th>##HAB</th>
+        <th>Imagen</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key, data2) in amenidadDetails2">
+        <th>{{data2.idImagen}}</th>
+        <th>{{data2.idHabita}}</th>        
+        <th>
+          <div style="width: 90px; height: 60px; overflow: hidden;">
+            <img src="../src/images/amenidades/{{data2.idNombreImagen}}" width="100%;" height="auto;">
+          </div>
+        </th>
+        <th>
+          <span class="label label-danger deleteProduct" data-id='{{data2.idImagen}}' style="cursor:pointer" >Borrar</span>
+           <input type="" class="btn btn-default actualizarimg" value=""  name="" style="display:none" ng-click="actualizarimg()"></input>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <div class="col-md-12"><br><br><br></div>
+  <div class="col-md-5">
+    <form class="form-horizontal" enctype="multipart/form-data" id="setProductimg">
+          <label for="setImage" class="col-sm-12 control-label" style="text-align: left;">
+          Inserte una imagen de la habitación *
+          </label>
+          <div class="col-sm-12">
+            <input required type="file" class="form-control" id="setImage" name="setImage[]"></input>        
+          </div>
+            <input type="text" hidden name="idAmenidad" value="{{amenidadDetails2[0].idHabita}}"></input>              
+
+          <div class="col-sm-12">
+            <input type="submit" class="btn btn-default" value="Agregar"  name="" style="margin-top: 10px;"></input>
+            <input type="" class="btn btn-default actualizarimg" value=""  name="" style="display:none" ng-click="actualizarimg()"></input>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

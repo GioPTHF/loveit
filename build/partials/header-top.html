@@ -1,0 +1,34 @@
+<div class="row" id="headerTop">
+  <div class="col-lg-3 col-md-2 col-sm-2 col-xs-12 divTag">
+    <div class="tag">
+      <img src="./img/loveit-02.png">
+    </div>
+    <div class="menu" ng-click="menuOpen()">
+      <label id="hamburger">
+        <input type="checkbox" name="button-flag" value="flag" id="flag">
+        <span></span>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-9 col-sm-10 col-xs-12 headerNav">
+    <div class="menuNav">
+      <ul>
+        <!--  class="hvr-underline-from-center" -->
+        <a href="#home"><li ng-click="changerute(0)" ng-class="{'selected': itemselected === 0 , 'hvr-underline-from-center': itemselected != 0 }" >HOME / INDEX</li></a>
+        <a href="#nosotros"><li ng-click="changerute(1)" ng-class="{'selected': itemselected === 1 , 'hvr-underline-from-center': itemselected != 1  }" >NOSOTROS</li></a>
+        <a href="#espacios"><li ng-click="changerute(2)" ng-class="{'selected': itemselected === 2 , 'hvr-underline-from-center': itemselected != 2 }" >ESPACIOS</li></a>
+        <a href="#amenidades"><li ng-click="changerute(3)" ng-class="{'selected': itemselected === 3 , 'hvr-underline-from-center': itemselected != 3 }" >AMENIDADES</li></a>
+        <a href="#habitaciones"><li ng-click="changerute(4)" ng-class="{'selected': itemselected === 4 , 'hvr-underline-from-center': itemselected != 4 }" >HABITACIONES</li></a>
+        <a href="#restaurante"><li ng-click="changerute(5)" ng-class="{'selected': itemselected === 5 , 'hvr-underline-from-center': itemselected != 5 }" >RESTAURANTE</li></a>
+        <li class="submenu servicesOptions">
+          SERVICIOS
+          <ul>
+            <a href="#servicios"><li ng-click="changerute(6)">SERVICIOS LOVEIT</li></a>
+            <a href="#servicios-premium"><li ng-click="changerute(6)">PREMIUM</li></a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+</div>

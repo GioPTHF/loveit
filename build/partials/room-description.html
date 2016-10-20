@@ -1,0 +1,28 @@
+<div id="roomDescription" class="row">
+  <div class="descriptionContainer" ng-show="item===1">
+    <div class="headerTopGallery">
+      <div class="headerImage">
+        <img src="./img/roomdetails-01.png">
+      </div>
+      <div class="headerTitle" ng-controller="getNombreLibraryController">
+        <span class="titleSpan">{{listNombre}}</span>
+        <span class="titleImg"><img src="./img/roomdetails-02.png" style="width: 100%; height: auto;"></span>
+      </div>
+    </div>
+    <div class="topInformationGallery">
+      <div class="photo">
+        <div class="galleryRoom">
+          <swiper-slider-room></swiper-slider-room>
+        </div>
+      </div>
+      <div class="descriptionPhoto">
+        <div class="containerDP" ng-controller="getDescripcionLibraryController">
+          <span> <p align="justify"> {{listDescripcion}} </p> </span>
+          <span>Two expansive beach-view balconies compliment every suite, offering plenty of space to enjoy our in-room breakfast service or catch up with friends using our free Wi-Fi.</span>
+          <span class="reservarButtom">RESERVA AHORA</span><br><br>
+          <span class="reservarButtom closeDescription">REGRESAR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,205 @@
+$back-height = 55vw
+
+.nosotros-wrapper
+  width 100%
+  height $back-height
+  position relative
+
+.back-layer
+  position absolute
+  width 100%
+  height auto
+  display flex
+  flex-direction row
+  height $back-height
+
+.back-right-layer
+  flex 0 1 30%
+  height $back-height
+  overflow hidden
+
+.back-right-layer img
+  height: 60%
+
+.back-left-layer
+  flex 0 1 70%
+  overflow hidden
+  height $back-height
+
+.back-left-layer img
+  width: 100%;
+  height 100%
+
+.front-layer
+  width 100%
+  height auto
+  position absolute
+  bottom 0
+  display flex
+  flex-direction row
+  align-items flex-end
+  height 22.5vw
+  z-index 5
+
+.front-right-layer
+  flex: 0 1 47.5%
+  height: 22vw
+  overflow hidden
+  background-image url('../img/bg-2.svg')
+  background-repeat repeat-x
+
+
+.front-mid-layer
+  position: relative;
+  flex 0 1 27.7%
+  height 40vw
+  background-color rgba(223,181,114,.8)
+
+.front-left-layer
+  position relative
+  display flex
+  justify-content flex-start
+  flex 0 1 25%
+  height 20vw
+
+.button-reserve-wrapper
+  position absolute
+  width 100%
+  height auto
+  top 50%
+  text-align center
+
+.button-reserve
+  position: relative;
+  width: 50%;
+  height: auto;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #300008;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+a.button-reserve
+  cursor: pointer;
+
+a.button-reserve:hover
+  text-decoration: none;
+  color: #fff;
+  opacity .9
+
+span.title-button
+  letter-spacing: .2em;
+  font-weight 100
+  text-align center
+
+.mid-layer-logo
+  padding: 2vw 0
+
+.mid-layer-logo img
+  width: 40%;
+
+.front-mid-wrapper
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+
+p.layer-text
+  font-size: 14px;
+  text-align: justify;
+  color:black
+
+.mid-layer-logo-bottom
+  position: absolute;
+  bottom: 3%;
+  text-align: center;
+  left: 0;
+  width: 100%;
+
+ .mid-layer-logo-bottom img
+  width 20%
+
+@media(max-width 1280px)
+  p.layer-text
+    font-size: 13px
+
+@media(max-width 1119px)
+  .front-right-layer,.back-right-layer
+    display none
+
+  p.layer-text
+    font-size: 14px
+
+  $height-responsive = 85vw
+
+  .nosotros-wrapper,.back-layer,.back-left-layer
+    height $height-responsive
+
+  .front-layer
+    height 80vw
+
+  .back-left-layer
+    flex 0 1 100%
+
+  .front-layer
+    flex-direction column
+    justify-content: center;
+    align-items: center;
+
+  .front-left-layer
+    width 100%
+
+  .front-mid-layer
+    flex 0 1 80%
+    width 80%
+
+  .mid-layer-logo
+    text-align: center;
+    padding: 3vw 0
+
+  .mid-layer-logo-bottom img
+    width 15%
+
+  p.layer-text
+    font-size: 16px
+  .front-mid-wrapper
+    width 70%
+@media(max-width 768px)
+  .back-layer, .back-left-layer, .nosotros-wrapper
+    height: 95vw
+  .front-layer
+    height: 90vw
+  .front-mid-wrapper
+    width 80%
+
+@media(max-width 640px)
+  .back-layer, .back-left-layer, .nosotros-wrapper
+    height: 123vw
+  .front-layer
+    height: 118vw
+  p.layer-text
+    font-size: 14px
+@media(max-width 480px)
+  .back-layer, .back-left-layer, .nosotros-wrapper
+    height: 145vw
+  .front-layer
+    height: 135vw
+  p.layer-text
+    font-size: 12px
+
+@media(max-width 440px)
+  .back-layer, .back-left-layer, .nosotros-wrapper
+    height: 140vw
+  .front-layer
+    height: 135vw
+
+@media(max-width 330px)
+  .back-layer, .back-left-layer, .nosotros-wrapper
+    height: 216vw
+  .front-layer
+    height: 205vw

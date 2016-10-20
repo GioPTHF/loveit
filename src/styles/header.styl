@@ -1,0 +1,158 @@
+#headerTop
+  position relative
+  width 100%
+  margin 0 auto
+  padding-bottom 50px
+  z-index: 10
+  background: #FFF
+
+.menu
+  display none
+  font-size 4em
+  color #FFF
+  position absolute
+  top 35%
+  left 5%
+
+.divTag
+  position relative
+
+.divTag div.tag
+  position absolute
+  width 40%
+  top 0
+  left 35%
+  max-width 165px
+  min-width 145px
+
+.divTag div.tag img
+  width 100%
+  height auto
+  z-index 10
+
+.menuNav
+  margin-top 80px
+  max-width 1366px
+
+.menuNav ul
+  position relative
+  width 100%
+  text-aling center
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content space-between
+  align-items center
+  align-content center
+
+.menuNav ul, .menuNav ul li
+  padding 0
+  margin 0
+  text-decoration none
+  list-style none
+
+.menuNav ul li
+  color principal-color
+  font-size 1.8em
+  font-weight 300
+  font-family futura
+  padding-bottom .8em
+
+.menuNav ul li.selected
+  border-bottom 4px solid secondary-color
+  padding-bottom .5em
+
+.menuNav ul li:hover
+  cursor pointer
+
+.hvr-underline-from-center:before, .hvr-underline-from-left:before
+  background secondary-color
+
+#flag
+  display none
+
+#hamburger
+  position relative
+  display block
+  width 1.5em
+  height 1.5em
+  cursor pointer
+  background secondary-color
+
+#hamburger span
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  width 1em
+  height .25em
+  margin auto
+  background principal-color
+
+#hamburger span:before,
+#hamburger span:after
+  position absolute
+  width inherit
+  height inherit
+  content ''
+  background principal-color
+
+#hamburger span:before
+  top -.35em
+
+#hamburger span:after
+  bottom -.35em
+
+#hamburger span
+  transition: background 0s .25s
+
+#hamburger span:before,
+#hamburger span:after
+  transition-delay .25s, 0s
+  transition-duration .25s, .25s
+
+#hamburger span:before
+  transition-property top, transform
+
+#hamburger span:after
+  transition-property bottom, transform
+
+#flag:checked + span
+  background none
+
+#flag:checked + span:before
+  top 0
+  transform rotate(45deg)
+
+#flag:checked + span:after
+  bottom 0
+  transform rotate(-45deg)
+
+#flag:checked + span:before,
+#flag:checked + span:after
+  transition-delay 0s, .25s
+
+
+li.submenu
+  position: relative;
+
+li.submenu ul
+  display: block;
+  width: 200%;
+  position: absolute;
+  top: 100%;
+  left: -50%;
+  margin: 0;
+
+li.submenu ul li
+  background: principal-color;
+  color: secondary-color;
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: 'futura';
+  font-size: 1em;
+  margin: 0;
+  padding: .5vw;
+  margin-bottom: 2px;
