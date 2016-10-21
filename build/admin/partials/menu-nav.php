@@ -18,6 +18,7 @@
   			<li style="background: #3B170B; color: #fff;" role="presentation" ng-class="{active:selected===1}" ng-click="changeNav(1)"><a href="#/amenidad" style="color: #F5DA81;"><span class="glyphicon glyphicon-briefcase" ></span>Amenidades</a></li>
         <li style="background: #3B170B; color: #fff;" role="presentation" ng-class="{active:selected===2}" ng-click="changeNav(2)"><a href="#/habitaciones" style="color: #F5DA81;"><span class="glyphicon glyphicon-briefcase" ></span>Habitaciones</a></li>
         <li style="background: #3B170B; color: #fff;" role="presentation" ng-class="{active:selected===3}" ng-click="changeNav(3)"><a href="#/espacios" style="color: #F5DA81;"><span class="glyphicon glyphicon-briefcase" ></span>Espacios</a></li>
+        <li style="background: #3B170B; color: #fff;" role="presentation" ng-class="{active:selected===4}" ng-click="changeNav(4)"><a href="#/slider" style="color: #F5DA81;"><span class="glyphicon glyphicon-briefcase" ></span>Slider</a></li>        
   		</ul>
       </ul>
 		</div>

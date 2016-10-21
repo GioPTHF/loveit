@@ -24,6 +24,7 @@
     $scope.listAmenidad = [];   
     $scope.listEspacios = [];
     $scope.listCategory = [];
+    $scope.listSlider = [];
     $scope.loadProducts = function(){
       agaleaService.getProducts().then(function(data){
         $scope.listProduct = data;
@@ -44,11 +45,17 @@
         $scope.listEspacios = data;
       });
     }  
+    $scope.loadSlider = function(){
+      agaleaService.getSlider().then(function(data){
+        $scope.listSlider = data;
+      });
+    }      
     $scope.update = function(){
       $scope.loadProducts();
       $scope.loadAmenidad();  
       $scope.loadCategories();
       $scope.loadEspacios();
+      $scope.loadSlider();
     }
     $scope.update();
     //This section is about fuction on change categories in add products.
@@ -79,7 +86,6 @@
     }
 
   }])  
-
   .controller('amenidadDetailsController', ['$scope', '$routeParams', 'agaleaService', function($scope, $routeParams, agaleaService){
     $scope.idAmenidades = $routeParams.id;
     $scope.amenidadDetails = [];
@@ -103,7 +109,6 @@
       });
     }
   }]) 
-
   .controller('espaciosDetailsController', ['$scope', '$routeParams', 'agaleaService', function($scope, $routeParams, agaleaService){
     $scope.idEspacios = $routeParams.id;
     $scope.espaciosDetails = [];
