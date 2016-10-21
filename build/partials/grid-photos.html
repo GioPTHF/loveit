@@ -3,19 +3,21 @@
     cursor: default !important;
   }
 </style>
-
 <div id="sectionSpaces" class="row animated fadeIn">
   <div class="gridPhotos">
     <div class="containerGallery">
-      <div class="leftBox">
-        <img src="./img/gallery03.png">
+      <div class="leftBox" data-id="{{spacesList[0].idEspacios}}">
+        <!-- <img src="./img/gallery03.png"> -->
+        <img src="./admin/src/images/espacios/{{spacesList[0].imagenes[0]}}">
       </div>
       <div class="RightBox">
-        <div class="topImage">
-          <img src="./img/gallery01.png">
+        <div class="topImage" data-id="{{spacesList[1].idEspacios}}">
+          <!-- <img src="./img/gallery01.png"> -->
+          <img src="./admin/src/images/espacios/{{spacesList[1].imagenes[1]}}">
         </div>
-        <div class="bottomImage">
-          <img src="./img/gallery02.png">
+        <div class="bottomImage" data-id="{{spacesList[2].idEspacios}}">
+          <!-- <img src="./img/gallery02.png"> -->
+          <img src="./admin/src/images/espacios/{{spacesList[2].imagenes[2]}}">
         </div>
       </div>
     </div>

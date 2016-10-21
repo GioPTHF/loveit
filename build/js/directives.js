@@ -126,26 +126,42 @@
       templateUrl: './partials/grid-photos.html',
       controller: function($document){
         $('.topImage,.bottomImage,.leftBox').click(function(){
+          var idEspacio = $(this).attr('data-id');
+          var namefunction = 'sliderGallerySpaces';
+          $.ajax({
+            url: "./admin/php/functions.php",
+            type: "POST",
+            data: {
+              idEspacio: idEspacio,
+              namefunction: namefunction
+            },
+            success: function(result){
+              $('.swiper-wrapper').html(result);
+            },
+            error: function(error){
+              alert(error);
+            }
+          });
 
-          // $("html, body").animate({
-          //   'scrollTop' : '0'
-          // }, 500, function(){});
-          // $('#sectionSpaces').removeClass('fadeIn');
-          // $('#sectionSpaces').addClass('fadeOut');
-          // $('#sectionSpaces').css({'display' : 'none'});
-          // $('#informationShow').removeClass('fadeOut');
-          // $('#informationShow').css({'display' : 'flex'});
-          // $('#informationShow').addClass('fadeIn');
-          //
-          // setTimeout(function(){
-          //   var mySwiper2 = new Swiper('.swiper-container',{
-          //     pagination: '.swiper-pagination',
-          //     loop:true,
-          //     grabCursor: false,
-          //     paginationClickable: true,
-          //     autoplay:false
-          //   });
-          // },80);
+          $("html, body").animate({
+            'scrollTop' : '0'
+          }, 500, function(){});
+          $('#sectionSpaces').removeClass('fadeIn');
+          $('#sectionSpaces').addClass('fadeOut');
+          $('#sectionSpaces').css({'display' : 'none'});
+          $('#informationShow').removeClass('fadeOut');
+          $('#informationShow').css({'display' : 'flex'});
+          $('#informationShow').addClass('fadeIn');
+          
+          setTimeout(function(){
+            var mySwiper2 = new Swiper('.swiper-container',{
+              pagination: '.swiper-pagination',
+              loop:true,
+              grabCursor: false,
+              paginationClickable: true,
+              autoplay:false
+            });
+          },80);
 
         });
         $('.closeDescriptionAmenidades').click(function(){

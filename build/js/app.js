@@ -2,7 +2,8 @@
 	var app = angular.module('loveitSite', [
 		'ngRoute',
 		'loveitSite.controllers',
-		'loveitSite.directives'
+		'loveitSite.directives',
+		'loveitSite.services'
 	]);
 	app.config(['$routeProvider', '$locationProvider' , function($routeProvider, $locationProvider){
 		$routeProvider

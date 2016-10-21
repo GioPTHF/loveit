@@ -292,6 +292,15 @@
       $query = "UPDATE espacios SET Nombre = '".$data['productName']."',Descripcion = '".$data['productDescription']."'  WHERE idEspacios =  ".$data['productId'];
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
     }
+
+    private function sliderGallerySpaces(){
+      print_r($_POST['idEspacio']);
+      $query = "SELECT * FROM imagenesespacios WHERE Espacios_idEspacios = '".$_POST['idEspacio']."'";
+      $result = mysql_query($query, $this->connection()) or die(mysql_error());
+      while ($row = mysql_fetch_array($result)) {
+        echo '<div class="swiper-slide"><img src="./admin/src/images/espacios/'.$row['nombreImagen'].'"></div>';
+      }
+    }
   }
   $nameObject = $_POST['namefunction'];
   new Functions($nameObject);
