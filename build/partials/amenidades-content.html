@@ -13,13 +13,12 @@
   }
 
 </style>
-<!-- {{amenidadesList}} -->
 <div class="amenidades-wrapper">
 
   <div class="top-amenidades">
 
     <div class="top-left-box">
-      <div class="top-left-top" data-id="{{amenidadesList[0].idAmenidades}}">
+      <div class="top-left-top" data-id="{{amenidadesList[0].idAmenidades}}" ng-click="changeItemSelected(amenidadesList[0].idAmenidades);">
         <div class="title-box">
           <!-- <span class="style-title-text">RESTAURANTE</span> -->
           <span class="style-title-text"><span class="title-button">{{amenidadesList[0].nombreAmenidad | uppercase}}</span></span>
@@ -27,17 +26,23 @@
         <!-- <img src="img/photo01.png" alt="" /> -->
         <img src="./admin/src/images/amenidades/{{amenidadesList[0].imagenes[0]}}" alt="" />
       </div>
-
-      <div class="top-left-bottom"></div>
+      <div class="top-left-top" data-id="{{amenidadesList[1].idAmenidades}}" ng-click="changeItemSelected(amenidadesList[1].idAmenidades);">
+        <div class="title-box">
+          <!-- <span class="style-title-text">RESTAURANTE</span> -->
+          <span class="style-title-text"><span class="title-button">{{amenidadesList[1].nombreAmenidad | uppercase}}</span></span>
+        </div>
+        <!-- <img src="img/photo01.png" alt="" /> -->
+        <img src="./admin/src/images/amenidades/{{amenidadesList[1].imagenes[0]}}" alt="" />
+      </div>
     </div>
 
-    <div class="top-right-box" data-id="{{amenidadesList[1].idAmenidades}}">
+    <div class="top-right-box" data-id="{{amenidadesList[2].idAmenidades}}" ng-click="changeItemSelected(amenidadesList[2].idAmenidades);">
       <div class="title-box">
         <!-- <span class="style-title-text">LOBBY</span> -->
-        <span class="style-title-text"><span class="title-button">{{amenidadesList[1].nombreAmenidad | uppercase}}</span></span>
+        <span class="style-title-text"><span class="title-button">{{amenidadesList[2].nombreAmenidad | uppercase}}</span></span>
       </div>
       <!-- <img src="img/photo02.png" alt="" /> -->
-      <img src="./admin/src/images/amenidades/{{amenidadesList[1].imagenes[0]}}" alt="" />
+      <img src="./admin/src/images/amenidades/{{amenidadesList[2].imagenes[0]}}" alt="" />
     </div>
 
   </div>
@@ -48,11 +53,11 @@
         <div class="white-color-bar"></div>
         <div class="white-yellow-bar"></div>
       </div>
-      <div class="mid-left-bottom" data-id="{{amenidadesList[2].idAmenidades}}">
+      <div class="mid-left-bottom" data-id="{{amenidadesList[3].idAmenidades}}" ng-click="changeItemSelected(amenidadesList[3].idAmenidades);">
         <!-- <img src="img/photo03.png" alt="" /> -->
-      <img src="./admin/src/images/amenidades/{{amenidadesList[2].imagenes[0]}}" alt="" />
+      <img src="./admin/src/images/amenidades/{{amenidadesList[3].imagenes[0]}}" alt="" />
         <!-- <span class="title-box title-box-bottom style-title-text">SKY BAR</span> -->
-        <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[2].nombreAmenidad | uppercase}}</span></span>
+        <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[3].nombreAmenidad | uppercase}}</span></span>
       </div>
     </div>
 
@@ -62,11 +67,11 @@
   </div>
 
   <div class="bottom-amenidades">
-    <div class="bottom-left" data-id="{{amenidadesList[3].idAmenidades}}">
+    <div class="bottom-left" data-id="{{amenidadesList[4].idAmenidades}}" ng-click="changeItemSelected(amenidadesList[4].idAmenidades);">
       <!-- <img src="img/photo04.png" alt="" /> -->
-      <img src="./admin/src/images/amenidades/{{amenidadesList[3].imagenes[0]}}" alt="" />
+      <img src="./admin/src/images/amenidades/{{amenidadesList[4].imagenes[0]}}" alt="" />
       <!-- <span class="title-box title-box-bottom style-title-text">BIBLIOTECA</span> -->
-      <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[3].nombreAmenidad | uppercase}}</span></span>
+      <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[4].nombreAmenidad | uppercase}}</span></span>
     </div>
 
     <div class="bottom-right">
@@ -75,11 +80,11 @@
         <div class="white-white-bar"></div>
       </div>
 
-      <div class="bottom-right-bottom" data-id="{{amenidadesList[4].idAmenidades}}">
+      <div class="bottom-right-bottom" data-id="{{amenidadesList[5].idAmenidades}}" ng-click="changeItemSelected(amenidadesList[5].idAmenidades);">
         <!-- <img src="img/photo05.png" alt="" /> -->
-        <img src="./admin/src/images/amenidades/{{amenidadesList[4].imagenes[0]}}" alt="" />
+        <img src="./admin/src/images/amenidades/{{amenidadesList[5].imagenes[0]}}" alt="" />
         <!-- <span class="title-box title-box-bottom style-title-text">GYM</span> -->
-        <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[4].nombreAmenidad | uppercase}}</span></span>
+        <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[5].nombreAmenidad | uppercase}}</span></span>
       </div>
     </div>
 
@@ -91,7 +96,9 @@
 <div id="informationShow" class="animated" style="display: none">
   <div class="space"></div>
   <div class="containerInfoDescription">
-    <table-information></table-information>
+    <div ng-if="itemSelected == 19">
+      <table-information></table-information>
+    </div>
     <gallery-description></gallery-description>
   </div>
 </div>

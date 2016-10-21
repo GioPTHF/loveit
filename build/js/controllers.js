@@ -33,6 +33,11 @@
       $scope.amenidadesList = data;
     });
 
+    $scope.itemSelected = 0;
+    $scope.changeItemSelected = function(item){
+      $scope.itemSelected = item;
+    }
+
   }])
 
   .controller('ExampleController', ['$scope', function($scope) {
