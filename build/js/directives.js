@@ -39,6 +39,15 @@
       }
     }
   })
+  .directive('tableInformation', function(){
+    return {
+      restrict: 'E',
+      templateUrl: './partials/table-information.html',
+      controller: function($document){
+
+      }
+    }
+  })
   .directive('swiperSlider', function(){
     return {
       restrict: 'E',
@@ -169,7 +178,7 @@
           $('#informationShow').removeClass('fadeOut');
           $('#informationShow').css({'display' : 'flex'});
           $('#informationShow').addClass('fadeIn');
-          
+
           setTimeout(function(){
             var mySwiper2 = new Swiper('.swiper-container',{
               pagination: '.swiper-pagination',

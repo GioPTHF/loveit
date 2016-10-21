@@ -4,6 +4,14 @@
     color: #300008;
   }
 
+  .title-button{
+    background-color: rgba(223, 223, 223, .5);
+    padding: 10px 15px 10px 15px;
+    font-weight: 700;
+    font-family: 'futura';
+    font-size: 1.2em;
+  }
+
 </style>
 <!-- {{amenidadesList}} -->
 <div class="amenidades-wrapper">
@@ -14,7 +22,7 @@
       <div class="top-left-top" data-id="{{amenidadesList[0].idAmenidades}}">
         <div class="title-box">
           <!-- <span class="style-title-text">RESTAURANTE</span> -->
-          <span class="style-title-text">{{amenidadesList[0].nombreAmenidad | uppercase}}</span>
+          <span class="style-title-text"><span class="title-button">{{amenidadesList[0].nombreAmenidad | uppercase}}</span></span>
         </div>
         <!-- <img src="img/photo01.png" alt="" /> -->
         <img src="./admin/src/images/amenidades/{{amenidadesList[0].imagenes[0]}}" alt="" />
@@ -26,7 +34,7 @@
     <div class="top-right-box" data-id="{{amenidadesList[1].idAmenidades}}">
       <div class="title-box">
         <!-- <span class="style-title-text">LOBBY</span> -->
-        <span class="style-title-text">{{amenidadesList[1].nombreAmenidad | uppercase}}</span>
+        <span class="style-title-text"><span class="title-button">{{amenidadesList[1].nombreAmenidad | uppercase}}</span></span>
       </div>
       <!-- <img src="img/photo02.png" alt="" /> -->
       <img src="./admin/src/images/amenidades/{{amenidadesList[1].imagenes[0]}}" alt="" />
@@ -40,12 +48,11 @@
         <div class="white-color-bar"></div>
         <div class="white-yellow-bar"></div>
       </div>
-
       <div class="mid-left-bottom" data-id="{{amenidadesList[2].idAmenidades}}">
         <!-- <img src="img/photo03.png" alt="" /> -->
       <img src="./admin/src/images/amenidades/{{amenidadesList[2].imagenes[0]}}" alt="" />
         <!-- <span class="title-box title-box-bottom style-title-text">SKY BAR</span> -->
-        <span class="title-box title-box-bottom style-title-text">{{amenidadesList[2].nombreAmenidad | uppercase}}</span>
+        <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[2].nombreAmenidad | uppercase}}</span></span>
       </div>
     </div>
 
@@ -55,12 +62,11 @@
   </div>
 
   <div class="bottom-amenidades">
-
     <div class="bottom-left" data-id="{{amenidadesList[3].idAmenidades}}">
       <!-- <img src="img/photo04.png" alt="" /> -->
       <img src="./admin/src/images/amenidades/{{amenidadesList[3].imagenes[0]}}" alt="" />
       <!-- <span class="title-box title-box-bottom style-title-text">BIBLIOTECA</span> -->
-      <span class="title-box title-box-bottom style-title-text">{{amenidadesList[3].nombreAmenidad | uppercase}}</span>
+      <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[3].nombreAmenidad | uppercase}}</span></span>
     </div>
 
     <div class="bottom-right">
@@ -73,7 +79,7 @@
         <!-- <img src="img/photo05.png" alt="" /> -->
         <img src="./admin/src/images/amenidades/{{amenidadesList[4].imagenes[0]}}" alt="" />
         <!-- <span class="title-box title-box-bottom style-title-text">GYM</span> -->
-        <span class="title-box title-box-bottom style-title-text">{{amenidadesList[4].nombreAmenidad | uppercase}}</span>
+        <span class="title-box title-box-bottom style-title-text"><span class="title-button">{{amenidadesList[4].nombreAmenidad | uppercase}}</span></span>
       </div>
     </div>
 
@@ -85,6 +91,7 @@
 <div id="informationShow" class="animated" style="display: none">
   <div class="space"></div>
   <div class="containerInfoDescription">
+    <table-information></table-information>
     <gallery-description></gallery-description>
   </div>
 </div>
