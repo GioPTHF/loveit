@@ -22,7 +22,6 @@
     $scope.showItem = function(item){
       $scope.item = item;
     }
-
     $scope.spacesList = [];
     loveitService.getListSpaces().then(function(data){
       $scope.spacesList = data;
@@ -34,10 +33,13 @@
     $scope.showItem = function(item){
       $scope.item = item;
     }
-
     $scope.sliderList = [];
     loveitService.getListSlider().then(function(data){
       $scope.sliderList = data;
+    });
+    $scope.amenidadesList = [];
+    loveitService.getListAmenidades().then(function(data){
+      $scope.amenidadesList = data;
     });
   }])
   .controller('habitacionesDescriptionController', ['$scope', 'loveitService','$rootScope', function($scope, loveitService, $rootScope){
@@ -46,7 +48,6 @@
     $scope.showItem = function(item){
       $scope.item = item;
     }
-
     $scope.habiList = [];
     loveitService.getListHabitaciones().then(function(data){
       $scope.habiList = data;

@@ -13,7 +13,7 @@
           INNER JOIN imageneshabitacion ON imageneshabitacion.Habitaciones_idHabitaciones=habitaciones.idHabitaciones
           INNER JOIN tipohabitacion ON tipohabitacion.idtipoHabitacion=habitaciones.tipoHabitacion_idtipoHabitacion
           GROUP by habitaciones.idHabitaciones
-          ORDER BY `idHabitaciones` DESC";
+          ORDER BY `idHabitaciones` ASC";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       $listProduct = array();
           while($line = mysql_fetch_array($result)){
@@ -35,7 +35,7 @@
           FROM amenidades 
           INNER JOIN imagenesamenidades ON imagenesamenidades.Amenidades_idAmenidades=amenidades.idAmenidades
           GROUP by amenidades.idAmenidades
-          ORDER BY `idAmenidades` DESC";
+          ORDER BY `idAmenidades` ASC";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       $listAmenidad = array();
           while($line = mysql_fetch_array($result)){
@@ -55,7 +55,7 @@
           FROM espacios 
           INNER JOIN imagenesespacios ON imagenesespacios.Espacios_idEspacios=espacios.idEspacios
           GROUP by espacios.idEspacios
-          ORDER BY `idEspacios` DESC";
+          ORDER BY `idEspacios` ASC";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       $listEspacios = array();
           while($line = mysql_fetch_array($result)){
@@ -77,7 +77,7 @@
           INNER JOIN tipohabitacion ON tipohabitacion.idtipoHabitacion=habitaciones.tipoHabitacion_idtipoHabitacion 
           /*WHERE imageneshabitacion.Habitaciones_idHabitaciones = idProduct*/
           GROUP by imageneshabitacion.idimagenesHabitacion
-          ORDER BY `idimagenesHabitacion` DESC";
+          ORDER BY `idimagenesHabitacion` ASC";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       $listProductimg = array();
           while($line = mysql_fetch_array($result)){
@@ -97,7 +97,7 @@
           FROM imagenesamenidades 
           INNER JOIN amenidades ON amenidades.idAmenidades=imagenesamenidades.Amenidades_idAmenidades
           GROUP by imagenesamenidades.idimagenesAmenidades
-          ORDER BY `idimagenesAmenidades` DESC";
+          ORDER BY `idimagenesAmenidades` ASC";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       $listProductimg = array();
           while($line = mysql_fetch_array($result)){
@@ -117,7 +117,7 @@
           FROM imagenesespacios 
           INNER JOIN espacios ON espacios.idEspacios=imagenesespacios.Espacios_idEspacios
           GROUP by imagenesespacios.idimagenesEspacios
-          ORDER BY `idimagenesEspacios` DESC";
+          ORDER BY `idimagenesEspacios` ASC";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       $listEspaciosimg = array();
           while($line = mysql_fetch_array($result)){

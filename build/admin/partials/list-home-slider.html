@@ -21,13 +21,13 @@
         </th>
         <th>
           <a href="#/amenidad/{{data.idAmenidades}}"><span class="label label-primary editElement" data-id='{{data.idAmenidades}}' style="cursor:pointer">Detalles</span></a>
-          <span class="label label-danger deleteAmenidad" data-id='{{data.idAmenidades}}' style="cursor:pointer">Borrar</span>
+          <!-- <span class="label label-danger deleteAmenidad" data-id='{{data.idAmenidades}}' style="cursor:pointer">Borrar</span> -->
         </th>
       </tr>
     </tbody>
   </table>
-  <div class="col-md-12"><br><br><br></div>
-  <div class="col-md-5">
+  <div class="col-md-12"><br></div>
+  <div class="col-md-5" ng-show="listAmenidad.length < 6">
     <form class="form-horizontal" enctype="multipart/form-data" id="setAmenidad">
        <div class="form-group">
           <label for="productName" class="col-sm-12 control-label" style="text-align: left;">
@@ -40,7 +40,7 @@
           Inserte una descripción para la amenidad *
           </label>
          <div class="col-sm-12">
-            <textarea required type="text" class="form-control" id="productDescripcion" name="productDescripcion"></textarea>
+            <textarea type="text" class="form-control" id="productDescripcion" name="productDescripcion"></textarea>
            </div>
           <label for="setImage" class="col-sm-12 control-label" style="text-align: left;">
           Inserte una imagen de la amenidad *
