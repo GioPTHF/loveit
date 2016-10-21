@@ -28,6 +28,11 @@
       $scope.spacesList = data;
     });
 
+    $scope.amenidadesList = [];
+    loveitService.getListAmenidades().then(function(data){
+      $scope.amenidadesList = data;
+    });
+
   }])
 
   .controller('ExampleController', ['$scope', function($scope) {

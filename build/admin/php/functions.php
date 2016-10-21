@@ -294,13 +294,20 @@
     }
 
     private function sliderGallerySpaces(){
-      print_r($_POST['idEspacio']);
       $query = "SELECT * FROM imagenesespacios WHERE Espacios_idEspacios = '".$_POST['idEspacio']."'";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());
       while ($row = mysql_fetch_array($result)) {
         echo '<div class="swiper-slide"><img src="./admin/src/images/espacios/'.$row['nombreImagen'].'"></div>';
       }
     }
+    private function sliderGalleryAmenidades(){
+      $query = "SELECT * FROM imagenesamenidades WHERE Amenidades_idAmenidades = '".$_POST['idAmenidad']."'";
+      $result = mysql_query($query, $this->connection()) or die(mysql_error());
+      while ($row = mysql_fetch_array($result)) {
+        echo '<div class="swiper-slide"><img src="./admin/src/images/amenidades/'.$row['nombreImagen'].'"></div>';
+      }
+    }
+
     private function addSlider(){
       parse_str($_POST['data'], $data);  
       foreach ($_FILES['setImage']["name"] as $key => $value) {

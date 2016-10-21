@@ -68,26 +68,43 @@
       templateUrl: './partials/amenidades-content.html',
       controller: function($document){
         $('.top-left-top,.top-left-bottom,.top-right-box,.mid-left-bottom,.bottom-left,.bottom-right-bottom').click(function(){
+          var idAmenidad = $(this).attr('data-id');
+          var namefunction = 'sliderGalleryAmenidades';
+          $.ajax({
+            url: "./admin/php/functions.php",
+            type: "POST",
+            data: {
+              idAmenidad: idAmenidad,
+              namefunction: namefunction
+            },
+            success: function(result){
+              // alert(result);
+              $('.swiper-wrapper').html(result);
+            },
+            error: function(error){
+              alert(error);
+            }
+          });
 
-          // $("html, body").animate({
-          //   'scrollTop' : '0'
-          // }, 500, function(){});
-          // $('.amenidades-wrapper').removeClass('fadeIn');
-          // $('.amenidades-wrapper').addClass('fadeOut');
-          // $('.amenidades-wrapper').css({'display' : 'none'});
-          // $('#informationShow').removeClass('fadeOut');
-          // $('#informationShow').css({'display' : 'flex'});
-          // $('#informationShow').addClass('fadeIn');
-          //
-          // setTimeout(function(){
-          //   var mySwiper2 = new Swiper('.swiper-container',{
-          //     pagination: '.swiper-pagination',
-          //     loop:true,
-          //     grabCursor: false,
-          //     paginationClickable: true,
-          //     autoplay:false
-          //   });
-          // },80);
+          $("html, body").animate({
+            'scrollTop' : '0'
+          }, 500, function(){});
+          $('.amenidades-wrapper').removeClass('fadeIn');
+          $('.amenidades-wrapper').addClass('fadeOut');
+          $('.amenidades-wrapper').css({'display' : 'none'});
+          $('#informationShow').removeClass('fadeOut');
+          $('#informationShow').css({'display' : 'flex'});
+          $('#informationShow').addClass('fadeIn');
+          
+          setTimeout(function(){
+            var mySwiper2 = new Swiper('.swiper-container',{
+              pagination: '.swiper-pagination',
+              loop:true,
+              grabCursor: false,
+              paginationClickable: true,
+              autoplay:false
+            });
+          },80);
 
         });
       }

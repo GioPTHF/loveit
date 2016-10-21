@@ -23,13 +23,13 @@
         <th>{{data.idTipo}}</th>
         <th>
           <a href="#/habitaciones/{{data.idProduct}}"><span class="label label-primary editElement" data-id='{{data.idProduct}}' style="cursor:pointer">Detalles</span></a>
-		  		<span class="label label-danger deleteProduct" data-id='{{data.idProduct}}' style="cursor:pointer">Borrar</span>
+		  		<!-- <span class="label label-danger deleteProduct" data-id='{{data.idProduct}}' style="cursor:pointer">Borrar</span> -->
         </th>
       </tr>
     </tbody>
   </table>
-  <div class="col-md-12"><br><br><br></div>
-  <div class="col-md-5">
+  <div class="col-md-12"><br></div>
+  <div class="col-md-5" ng-show="listProduct.length < 6">
     <form class="form-horizontal" enctype="multipart/form-data" id="setProduct">
        <div class="form-group">
           <label for="productName" class="col-sm-12 control-label" style="text-align: left;">
@@ -42,7 +42,7 @@
           Inserte una descripción para la habitación *
           </label>
          <div class="col-sm-12">
-            <textarea required type="text" class="form-control" id="productDescripcion" name="productDescripcion"></textarea>
+            <textarea type="text" class="form-control" id="productDescripcion" name="productDescripcion"></textarea>
            </div>
           <label for="setImage" class="col-sm-12 control-label" style="text-align: left;">
           Inserte una imagen de la habitación *
@@ -55,12 +55,13 @@
           </label>
           <div class="col-sm-12">
             <select name="productCategory" id="productCategory" ng-model="categorySelected" class="form-control" required>
+              <option disabled="" selected="" value="">Selecciona..</option>
               <option ng-repeat="option in listCategory" value="{{option.idtipoHabitacion}}">{{option.idnombreHabitacion}}
               </option>
             </select>
           </div>
           <div class="col-sm-12">
-            <input type="submit" class="btn btn-default" value="Agregar"  name="" style="margin-top: 10px;"></input>
+            <input type="submit" class="btn btn-default" value="Agregar"  name="" style="margin-top: 10px;" ng-model="valor.model"></input>
             <input type="" class="btn btn-default clickUpdate" value=""  name="" style="display:none" ng-click="update()"></input>
           </div>
         </div>
