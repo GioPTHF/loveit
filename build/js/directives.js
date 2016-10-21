@@ -184,31 +184,60 @@
       restrict: 'E',
       templateUrl: './partials/grid-photos-habitaciones.html',
       controller: function($document){
-        $('.selectHover').click(function(){
-          // $("html, body").animate({
-          //   'scrollTop' : '0'
-          // }, 500, function(){});
-          // $('#sectionHabitaciones').removeClass('fadeIn');
-          // $('#sectionHabitaciones').addClass('fadeOut');
-          // $('#sectionHabitaciones').css({'display' : 'none'});
-          // $('#informationShow').removeClass('fadeOut');
-          // $('#informationShow').css({'display' : 'flex'});
-          // $('#informationShow').addClass('fadeIn');
-          //
-          // setTimeout(function(){
-          //   var mySwiper2 = new Swiper('.swiper-container',{
-          //     pagination: '.swiper-pagination',
-          //     loop:true,
-          //     grabCursor: false,
-          //     paginationClickable: true,
-          //     autoplay:false
-          //   });
-          // },80);
+        $('.topImage,.bottomImage,.leftBox').click(function(){
+          var idHabitacion = $(this).attr('data-id');
+          var namefunction = 'sliderGalleryRooms';
+          $.ajax({
+            url: "./admin/php/functions.php",
+            type: "POST",
+            data: {
+              idHabitacion: idHabitacion,
+              namefunction: namefunction
+            },
+            success: function(result){
+              $('.swiper-wrapper').html(result);
+            },
+            error: function(error){
+              alert(error);
+            }
+          });
 
+          $("html, body").animate({
+            'scrollTop' : '0'
+          }, 500, function(){});
+          $('#sectionSpaces').removeClass('fadeIn');
+          $('#sectionSpaces').addClass('fadeOut');
+          $('#sectionSpaces').css({'display' : 'none'});
+          $('#informationShow').removeClass('fadeOut');
+          $('#informationShow').css({'display' : 'flex'});
+          $('#informationShow').addClass('fadeIn');
+          
+          setTimeout(function(){
+            var mySwiper2 = new Swiper('.swiper-container',{
+              pagination: '.swiper-pagination',
+              loop:true,
+              grabCursor: false,
+              paginationClickable: true,
+              autoplay:false
+            });
+          },80);
+
+        });
+        $('.closeDescriptionAmenidades').click(function(){
+          alert('ok');
+          $("html, body").animate({
+            'scrollTop' : '0'
+          }, 500, function(){});
+          $('#informationShow').removeClass('fadeIn');
+          $('#informationShow').addClass('fadeOut');
+          $('#informationShow').css({'display' : 'none'});
+          $('#sectionSpaces').removeClass('fadeOut');
+          $('#sectionSpaces').css({'display' : 'flex'});
+          $('#sectionSpaces').addClass('fadeIn');
         });
       }
     }
-  })
+  })        
   .directive('roomDescription', function(){
     return {
       restrict: 'E',

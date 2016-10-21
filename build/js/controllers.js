@@ -27,9 +27,31 @@
     loveitService.getListSpaces().then(function(data){
       $scope.spacesList = data;
     });
-
   }])
+  .controller('homeDescriptionController', ['$scope', 'loveitService','$rootScope', function($scope, loveitService, $rootScope){
+    $scope.active = true;
+    $scope.item = 1;
+    $scope.showItem = function(item){
+      $scope.item = item;
+    }
 
+    $scope.sliderList = [];
+    loveitService.getListSlider().then(function(data){
+      $scope.sliderList = data;
+    });
+  }])
+  .controller('habitacionesDescriptionController', ['$scope', 'loveitService','$rootScope', function($scope, loveitService, $rootScope){
+    $scope.active = true;
+    $scope.item = 1;
+    $scope.showItem = function(item){
+      $scope.item = item;
+    }
+
+    $scope.habiList = [];
+    loveitService.getListHabitaciones().then(function(data){
+      $scope.habiList = data;
+    });
+  }])
   .controller('ExampleController', ['$scope', function($scope) {
     $scope.data = {};
     $scope.text = '';
