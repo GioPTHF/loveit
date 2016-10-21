@@ -174,6 +174,16 @@
       });
       return deferred.promise;
     }
+    function getSlider(){
+      var deferred = $q.defer();
+      $http.get('./../php/services.php?namefunction=getSlider')
+        .success(function (data) {
+            deferred.resolve(data);
+        });
+        return deferred.promise;
+    }
+
+
     return {
       getProducts: getProducts,
       getProductsimg: getProductsimg,
@@ -189,7 +199,8 @@
       getEspacios: getEspacios,
       getEspaciosimg: getEspaciosimg,     
       espaciosByItem: espaciosByItem,
-      espaciosByItem2: espaciosByItem2
+      espaciosByItem2: espaciosByItem2,
+      getSlider: getSlider
     }
   }]);
 })();

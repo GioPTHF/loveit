@@ -143,6 +143,22 @@
       }
       print_r(json_encode($listCategory));
     }
+    /*Mostrar sldiers*/
+    private function getSlider(){
+      $query = "SELECT * FROM sliderhome ORDER BY idSliderhome DESC";
+      $result = mysql_query($query, $this->connection()) or die(mysql_error());
+      $listSlider = array();
+      while($line = mysql_fetch_array($result)){
+        $listSlider[] = array(
+          'idSliderhome' => $line['idSliderhome'],
+          'idNombreImagen' => $line['NombreImagen'],
+          'idUrl' => $line['Url']
+
+        );
+      }
+      print_r(json_encode($listSlider));
+    }
+
   }
   $nameObject = $_GET['namefunction'];
   new Services($nameObject);

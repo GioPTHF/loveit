@@ -301,6 +301,29 @@
         echo '<div class="swiper-slide"><img src="./admin/src/images/espacios/'.$row['nombreImagen'].'"></div>';
       }
     }
+    private function addSlider(){
+      parse_str($_POST['data'], $data);  
+      foreach ($_FILES['setImage']["name"] as $key => $value) {
+       $fileName = $this->getNameImage($_FILES, $key);       
+       $fileType = $_FILES["setImage"]["type"][$key];
+       $fileTemp = $_FILES["setImage"]["tmp_name"][$key];
+       move_uploaded_file($fileTemp, "../src/images/sliderhome/".$fileName);
+       //Hasta aqui llega la función
+       $query = "INSERT INTO sliderhome VALUES (null,'".$fileName."','".$data['sliderUrl']."')";       
+       $result = mysql_query($query, $this->connection()) or die(mysql_error());
+      }  
+    }    
+    private function removeSlider(){
+      $idSliderhome = $_POST['idSlider'];   
+      $query = "SELECT NombreImagen FROM sliderhome WHERE idSliderhome =".$idSliderhome;
+      $result = mysql_query($query, $this->connection()); 
+      $line = mysql_fetch_array($result);  
+      $productImage = $line['NombreImagen'];          
+      unlink("../src/images/sliderhome/".$productImage);
+      $query = "DELETE FROM sliderhome where  idSliderhome= ".$idSliderhome;
+      $result = mysql_query($query, $this->connection()) or die(mysql_error());
+    }         
+
   }
   $nameObject = $_POST['namefunction'];
   new Functions($nameObject);

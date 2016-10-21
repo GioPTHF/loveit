@@ -34,6 +34,10 @@
         templateUrl: './../views/espacios.html',
         controller: 'menuNavController'
       })     
+      .when('/slider', {
+        templateUrl: './../views/slider.html',
+        controller: 'menuNavController'
+      })          
       .otherwise({
 				redirectTo: '/redirect'
 			});

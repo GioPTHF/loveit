@@ -638,4 +638,53 @@
 			}
 		}
 	})
+	.directive('listSlider', function(){
+		return {
+			restrict: 'E',
+			templateUrl: './../partials/list-slider.html',
+			controller: function($document){
+				$(document).on('click', '.deleteSlider', function(){
+					var idSlider = $(this).attr('data-id');
+					var namefunction = 'removeSlider';
+					$.ajax({
+						url: "../php/functions.php",
+						type: "POST",
+						data: {
+							namefunction: namefunction,
+							idSlider: idSlider
+						},
+						success: function(result){
+							$('.clickUpdate').trigger('click');
+						},
+						error: function(error){
+							alert(error);
+						}
+					});
+				});
+				$('#setSlider').submit(function(){
+					var ajaxData = new FormData();
+					ajaxData.append("namefunction","addSlider");
+					ajaxData.append("data",$(this).serialize());
+					$.each($("#setSlider input[type=file]"), function(i,obj){
+						$.each(obj.files, function(j, file){
+							ajaxData.append('setImage['+j+']', file);
+						})
+					});
+					$.ajax({
+						url: "../php/functions.php",
+						type: "POST",
+						data: ajaxData,
+						processData: false,  // tell jQuery not to process the data
+						contentType: false,   // tell jQuery not to set contentType
+						success: function(result){
+						$('.clickUpdate').trigger('click');
+						},
+						error: function(error){
+							alert(error);
+						}
+					});
+				});			
+			}
+		}
+	})		
 })();
