@@ -1,11 +1,12 @@
 <div id="roomDescription" class="row">
-  <div class="descriptionContainer" ng-show="item===1">
+  <!-- <div class="descriptionContainer" ng-show="item===1"> -->
+  <div class="descriptionContainer">
     <div class="headerTopGallery">
       <div class="headerImage">
         <img src="./img/roomdetails-01.png">
       </div>
       <div class="headerTitle">
-        <span class="titleSpan">SIGNATURES SUITES</span>
+        <span class="titleSpan">{{habitacionList[0].tipoHabitacion}}</span>
         <span class="titleImg"><img src="./img/roomdetails-02.png" style="width: 100%; height: auto;"></span>
       </div>
     </div>
@@ -17,8 +18,9 @@
       </div>
       <div class="descriptionPhoto">
         <div class="containerDP">
-          <span>Experience a charming blend of spacious living and elegant décor. Then add graceful interiors, detailed to perfection with a unique hue of colours. Each of the exquisitely designed Deluxe Suites open up to reveal unparalleled luxury.</span>
-          <span>Two expansive beach-view balconies compliment every suite, offering plenty of space to enjoy our in-room breakfast service or catch up with friends using our free Wi-Fi.</span>
+          <!-- <span>Experience a charming blend of spacious living and elegant décor. Then add graceful interiors, detailed to perfection with a unique hue of colours. Each of the exquisitely designed Deluxe Suites open up to reveal unparalleled luxury.</span>
+          <span>Two expansive beach-view balconies compliment every suite, offering plenty of space to enjoy our in-room breakfast service or catch up with friends using our free Wi-Fi.</span> -->
+          <span>{{habitacionList[0].descripcion}}</span>
           <span class="reservarButtom">RESERVA AHORA</span><br><br>
           <span class="reservarButtom closeDescription">REGRESAR</span>
         </div>

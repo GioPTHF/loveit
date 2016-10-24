@@ -300,13 +300,6 @@
         echo '<div class="swiper-slide"><img src="./admin/src/images/espacios/'.$row['nombreImagen'].'"></div>';
       }
     }
-    private function sliderGalleryRooms(){
-      $query = "SELECT * FROM imageneshabitacion WHERE Habitaciones_idHabitaciones = '".$_POST['idHabitaciones']."'";
-      $result = mysql_query($query, $this->connection()) or die(mysql_error());
-      while ($row = mysql_fetch_array($result)) {
-        echo '<div class="swiper-slide"><img src="./admin/src/images/products/'.$row['nombreImagen'].'"></div>';
-      }
-    }
     private function sliderGalleryAmenidades(){
       $query = "SELECT * FROM imagenesamenidades WHERE Amenidades_idAmenidades = '".$_POST['idAmenidad']."'";
       $result = mysql_query($query, $this->connection()) or die(mysql_error());

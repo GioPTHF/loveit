@@ -12,7 +12,10 @@
 				break;
 			case 'getListHabitaciones':
 				getListHabitaciones();
-				break;				
+				break;	
+			case 'getListHabitacionesId':
+				getListHabitacionesId($_GET['id']);
+				break;			
 			case 'getListAmenidades':
 				getListAmenidades();
 				break;
@@ -70,7 +73,7 @@
 		$arrayDataCat = array();
 		$arrayDataSubCat = array();
 		while($lineCat = mysql_fetch_array($resultCat)){
-			$querySubCat = "SELECT * FROM imageneshabitaciones WHERE Habitaciones_idHabitaciones = ".$lineCat['idHabitaciones'];	
+			$querySubCat = "SELECT * FROM imageneshabitacion WHERE Habitaciones_idHabitaciones = ".$lineCat['idHabitaciones'];	
 			$resultSubCat = mysql_query($querySubCat,Conectar::con()) or die(mysql_error());
 			while($lineSubCat = mysql_fetch_array($resultSubCat)){
 			  $lineSubCatName = $lineSubCat['nombreImagen'];
@@ -82,6 +85,36 @@
 				'nombreHabitacion' => $lineCat['Nombre'],
 				'descripcion' => $lineCat['Descripcion'],
 				'imagenes' => $arrayDataSubCat
+			);
+			array_push($arrayDataCat, $dataAuxCat);
+			unset($dataAuxCat);
+			unset($arrayDataSubCat);
+			$arrayDataSubCat = array();
+
+		}
+		print_r(json_encode($arrayDataCat));
+	}
+
+	function getListHabitacionesId($idHabitacion) {
+		$queryCat = "SELECT * FROM Habitaciones h INNER JOIN tipohabitacion th ON th.idtipoHabitacion = h.tipoHabitacion_idtipoHabitacion 
+						WHERE h.idHabitaciones = '".$idHabitacion."'";
+		$resultCat = mysql_query($queryCat,Conectar::con()) or die(mysql_error());
+		$arrayDataCat = array();
+		$arrayDataSubCat = array();
+		while($lineCat = mysql_fetch_array($resultCat)){
+			$querySubCat = "SELECT * FROM imageneshabitacion WHERE Habitaciones_idHabitaciones = ".$lineCat['idHabitaciones'];	
+			$resultSubCat = mysql_query($querySubCat,Conectar::con()) or die(mysql_error());
+			while($lineSubCat = mysql_fetch_array($resultSubCat)){
+			  $lineSubCatName = $lineSubCat['nombreImagen'];
+			  array_push($arrayDataSubCat, $lineSubCatName);
+			  unset($lineSubCatName);
+			}
+			$dataAuxCat = array(
+				'idHabitaciones' => $lineCat['idHabitaciones'],
+				'nombreHabitacion' => $lineCat['Nombre'],
+				'descripcion' => $lineCat['Descripcion'],
+				'imagenes' => $arrayDataSubCat,
+				'tipoHabitacion' => $lineCat['NombreHabitacion']
 			);
 			array_push($arrayDataCat, $dataAuxCat);
 			unset($dataAuxCat);

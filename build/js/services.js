@@ -33,10 +33,19 @@
 			});
 			return deferred.promise;
 		}	
+		function getListHabitacionesId(id){
+			var deferred = $q.defer();
+			$http.get('./php/services.php?namefunction=getListHabitacionesId&id='+id)
+			.success(function (data) {
+				deferred.resolve(data);
+			});
+			return deferred.promise;
+		}
 		return {
 			getListSpaces: getListSpaces,
 			getListSlider: getListSlider,
 			getListHabitaciones:getListHabitaciones,
+			getListHabitacionesId: getListHabitacionesId,
 			getListAmenidades: getListAmenidades
 		}
 	}]);

@@ -1,6 +1,14 @@
 <!-- Swiper -->
 <div class="swiper-container swiper-room">
-  <div class="swiper-wrapper">
+  <div ng-if="valor">
+  	<div class="swiper-wrapper">
+  		<div class="swiper-slide" ng-repeat="(key, data) in habitacionList[0].imagenes">
+  			{{habitacionList[0].imagenes}}
+  			<img src="./admin/src/images/products/{{data}}">
+  		</div>
+  	</div>
+  </div>
+  	<div class="swiper-wrapper">
   </div>
   <!-- Add Pagination -->
   <div class="swiper-pagination swipper-pagination-room"></div>

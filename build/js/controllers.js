@@ -51,10 +51,15 @@
     $scope.item = 1;
     $scope.showItem = function(item){
       $scope.item = item;
+      $scope.valor = 'habitaciones';
+      $scope.habitacionList = [];
+      loveitService.getListHabitacionesId($scope.item).then(function(data){
+        $scope.habitacionList = data;
+      });
     }
-    $scope.habiList = [];
+    $scope.habitacionesList = [];
     loveitService.getListHabitaciones().then(function(data){
-      $scope.habiList = data;
+      $scope.habitacionesList = data;
     });
   }])
   .controller('ExampleController', ['$scope', function($scope) {
@@ -69,34 +74,5 @@
       // }
     };
   }]);
-
-  // .controller('getImagesProjectController', ['$scope', 'RoyalHomeService', function($scope, RoyalHomeService){
-  //   $scope.loadProyectos = function(){
-  //     $scope.projectList = [];
-  //     RoyalHomeService.getProjectList().then(function(data){
-  //       $scope.projectList = data;
-  //     });
-  //   }
-  //   $scope.loadProyectos();
-
-  //   $scope.valor={};
-  //   $scope.valor1={};
-  // }])
-
-  // .controller('countItemsCart', ['$scope', 'loveitService','$rootScope', function($scope, loveitService, $rootScope){
-  //   $scope.desarrolloList = [];
-  //   loveitService.dataDesarrollos().then(function(data){
-  //     $scope.desarrolloList = data;
-  //   });
-  // }])
-
-  // .controller('idPedidoCart', ['$scope', '$routeParams', 'loveitService', function($scope, $routeParams, loveitService){
-  //     $scope.idPedido = [];
-  //     $scope.id = parseInt($routeParams.id);
-  //     loveitService.getIdPedido($scope.id).then(function(data){
-  //       $scope.idPedido = data;
-  //     });
-  // }])
-
 
 })();
