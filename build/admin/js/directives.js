@@ -430,7 +430,7 @@
 			restrict: 'E',
 			templateUrl: './../partials/detail-amenidad2.html',
 			controller: function($document){
-				$(document).on('click', '.deleteProduct', function(){
+				$(document).on('click', '.deleteAmenidad', function(){
 					var idAmenidad = $(this).attr('data-id');
 					var namefunction = 'removeAmenidadimg';
 					$.ajax({
