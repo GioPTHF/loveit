@@ -341,9 +341,12 @@
 					$.ajax({
 						type: 'POST',
 						url: 'php/sendEmail.php',
-						data: data,
+              data: {
+              data : data
+            },
 						success : function(result){
-              console.log("Enviado.");
+              alert(data);
+              alert(result);
 							setTimeout(function(){
 								$('#formContact')[0].reset();
 							}, 1500);

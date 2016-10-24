@@ -16,35 +16,23 @@
     </div>
     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10">
-
-
-
-     <!-- <form id="formContact" ng-submit="submit()" ng-controller="ExampleController">-->
-      <form id="formContact" method="POST" action="./php/enviar.php">    
-        <label for="name">
-          <span>NOMBRE</span>
-          <input type="text" id="name" name="nombre" ng-model="user.name" required></input>
-        </label>
-
-        <label for="email">
-          <span>CORREO</span>
-          <input type="email" id="email" name="correo" ng-model="user.email" required></input>
-        </label>
-
-        <label for="message" class="message">
-          <span>MENSAJE</span>
-          <textarea id="message" name="dudas" ng-model="user.message" required></textarea>
-        </label>
-
-        <label for="send" class="send">
-          <input id="send" type="submit" value="Enviar"></input>
-        </label>
-
+      <form id="formContact" method="POST" action="../php/sendEmail.php">
+          <label for="name">
+            <span>NOMBRE</span>
+            <input type="text" id="name" name="nombre" ng-model="user.name" required></input>
+          </label>
+          <label for="email">
+            <span>CORREO</span>
+            <input type="email" id="email" name="correo" ng-model="user.email" required></input>
+          </label>
+          <label for="message" class="message">
+            <span>MENSAJE</span>
+            <textarea id="message" name="dudas" ng-model="user.message" required></textarea>
+          </label>
+          <label for="send" class="send">
+            <input id="send" type="submit" value="Enviar"></input>
+          </label>
       </form>
-
-
-
-
     </div>
     <div class="col-lg-3 col-md-3 col-sm-1 col-xs-12"></div>
   </div>

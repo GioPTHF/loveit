@@ -1,32 +1,28 @@
 <?php
-if(isset($_POST['data'])) {
 
-$data = $_POST['data'];
-$data['name'];
+parse_str($_POST['data'],$formdata);
 
-$email_to = "loveit@loveit.com";
-$email_subject = "Contacto loveit";
+$nombre = $formdata['nombre'];
+$correo_electronico= $formdata['correo']; 
+$dudas = $formdata['dudas']; /*
+$nombre = 'Giovanni';
+$correo_electronico= 'micorreo@hotmail.com'; 
+$dudas = 'Mis Dudas y/o comentarios';*/
 
-if(!isset($_POST['nombre']) ||
-!isset($_POST['email']) ||
-!isset($_POST['message'])) {
+$header = 'From: ' . $correo_electronico . ", de ".$nombre."\r\n"; 
+$header .= "X-Mailer: PHP/" . phpversion() . " \r\n"; 
+$header .= "Mime-Version: 1.0 \r\n"; 
+$header .= "Content-Type: text/plain"; 
 
-echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-die();
-}
+$mensaje = "Este mensaje fue enviado por " . $nombre . " \r\n"; 
+$mensaje .= "Dudas y/o comentarios " . $dudas . " \r\n";  
 
-$email_message = "Detalles del formulario de contacto:\n\n";
-$email_message .= "Nombre: " . $_POST['nombre'] . "\n";
-$email_message .= "Email: " . $_POST['email'] . "\n";
-$email_message .= "Comentarios: " . $_POST['message'] . "\n\n";
+$mensaje .= "Enviado el " . date('d/m/Y', time()); 
+ 
+$asunto = 'Contacto'; 
 
-
-$headers = 'From: '.$_POST['email']."\r\n".
-'Reply-To: '.$_POST['email']."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail('loveit@loveit.com', $_POST['subject'], $email_message, $headers);
-
-echo "¡El formulario se ha enviado con éxito!";
-}
+mail('ch_okis@hotmail.com', $asunto, utf8_decode($mensaje), $header);
+echo 'mensaje enviado correctamente'; 
+echo '<br>';
+echo $mensaje; 
 ?>
