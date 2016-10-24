@@ -1,15 +1,21 @@
 <!-- Swiper -->
-<div class="swiper-container swiper-room">
-  <div ng-if="valor">
-  	<div class="swiper-wrapper">
-  		<div class="swiper-slide" ng-repeat="(key, data) in habitacionList[0].imagenes">
-  			{{habitacionList[0].imagenes}}
-  			<img src="./admin/src/images/products/{{data}}">
-  		</div>
-  	</div>
+<div ng-show="!valor">
+  <div class="swiper-container swiper-room">
+    <div class="swiper-wrapper">
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swipper-pagination-room"></div>
   </div>
-  	<div class="swiper-wrapper">
+</div>
+<!-- Swiper Habitaciones-->
+<div ng-show="valor == 3">
+  <div class="swiper-container swiper-room">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" ng-repeat="image in habitacionList[0].imagenes">
+        <img src="./admin/src/images/products/{{image}}">
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swipper-pagination-room"></div>
   </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination swipper-pagination-room"></div>
 </div>

@@ -363,7 +363,6 @@
       restrict: 'E',
       templateUrl: './partials/swiper-slider-room.html',
       controller: function($document){
-
         $( ".selectHover" ).click(function() {
           var mySwiper3 = new Swiper('.swiper-room',{
             pagination: '.swipper-pagination-room',

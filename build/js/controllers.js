@@ -51,7 +51,7 @@
     $scope.item = 1;
     $scope.showItem = function(item){
       $scope.item = item;
-      $scope.valor = 'habitaciones';
+      $scope.valor = 3;
       $scope.habitacionList = [];
       loveitService.getListHabitacionesId($scope.item).then(function(data){
         $scope.habitacionList = data;
