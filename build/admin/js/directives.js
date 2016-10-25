@@ -144,6 +144,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 							$('.clickUpdate').trigger('click');
+							$('#setAmenidad')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -193,6 +194,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 							$('.clickUpdate').trigger('click');
+							$('#setProduct')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -242,6 +244,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 							$('.clickUpdate').trigger('click');
+							$('#setEspacio')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -354,6 +357,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 							$('.actualizarimg').trigger('click');
+							$('#setProductimg')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -448,11 +452,11 @@
 						}
 					});
 				});
-				$('#setProductimg').submit(function(){
+				$('#setAmenidadimg').submit(function(){
 					var ajaxData = new FormData();
 					ajaxData.append("namefunction","addNewAmenidadimg");
 					ajaxData.append("data",$(this).serialize());
-					$.each($("#setProductimg input[type=file]"), function(i,obj){
+					$.each($("#setAmenidadimg input[type=file]"), function(i,obj){
 						$.each(obj.files, function(j, file){
 							ajaxData.append('setImage['+j+']', file);
 						})
@@ -466,6 +470,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 							$('.actualizarimg').trigger('click');
+							$('#setAmenidadimg')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -578,6 +583,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 							$('.actualizarimg').trigger('click');
+							$('#setEspaciosimg')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -629,6 +635,7 @@
 						},
 						success: function(result){
 							$('.clickUpdate').trigger('click');
+							$('#addCategory')[0].reset();
 						},
 						error: function(error){
 							alert(error);
@@ -678,6 +685,7 @@
 						contentType: false,   // tell jQuery not to set contentType
 						success: function(result){
 						$('.clickUpdate').trigger('click');
+						$('#setSlider')[0].reset();
 						},
 						error: function(error){
 							alert(error);
