@@ -29,7 +29,10 @@
     </tbody>
   </table>
   <div class="col-md-12"><br></div>
-  <div class="col-md-5" ng-show="listProduct.length < 6">
+  <div class="alert alert-info col-md-6" role="alert">
+    <span class="alert-link">Es importante que se mantenga este orden con la información y las específicaciones requeridas. <br>Deben de ser 5 habitaciones activas.</span>
+  </div>
+  <div class="col-md-5" ng-show="listProduct.length < 5">
     <form class="form-horizontal" enctype="multipart/form-data" id="setProduct">
        <div class="form-group">
           <label for="productName" class="col-sm-12 control-label" style="text-align: left;">
